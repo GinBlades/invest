@@ -1,0 +1,9 @@
+= simple_form_for(@quote) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.association :code
+    = f.input :json
+
+  .form-actions
+    = f.button :submit, class: 'btn btn-success'

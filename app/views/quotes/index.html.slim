@@ -1,0 +1,24 @@
+h1 
+  | Quotes
+  = link_to "New Quote", new_quote_path, class: "btn btn-primary"
+
+table.table.table-striped
+  thead
+    tr
+      th Code
+      th Json
+      th
+      th
+      
+  tbody
+    - @quotes.each do |quote|
+      tr
+        td= quote.code
+        td= quote.json
+        td= link_to "Show", quote
+        td
+          = link_to "Edit", edit_quote_path(quote)
+          '
+          |/
+          '
+          = link_to "Destroy", quote, method: :delete, data: { confirm: "Are you sure?" }

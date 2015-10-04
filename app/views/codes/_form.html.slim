@@ -1,0 +1,11 @@
+= simple_form_for(@code) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.association :company
+    = f.input :symbol
+    = f.input :description
+    = f.input :market
+
+  .form-actions
+    = f.button :submit, class: 'btn btn-success'

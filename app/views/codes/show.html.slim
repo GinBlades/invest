@@ -1,0 +1,23 @@
+table.table.table-striped
+  tr
+    th Company:
+    td= @code.company
+  tr
+    th Symbol:
+    td= @code.symbol
+  tr
+    th Description:
+    td= @code.description
+  tr
+    th Most Recent Quote:
+    td
+      table.table-bordered
+        tbody
+          - @code.quotes.last.json.each do |k, v|
+            tr
+              th = Quote.tradeking_json_map[k]
+              td = v
+
+.btn-group
+  = link_to "Edit", edit_code_path(@code), class: "btn btn-default"
+  = link_to "Back", codes_path, class: "btn btn-default"

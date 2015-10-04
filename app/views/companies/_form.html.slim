@@ -1,0 +1,17 @@
+= simple_form_for(@company) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :name
+    = f.input :description, as: :text
+    = f.input :link
+
+    h3 Symbols
+    #codes
+      = f.simple_fields_for :codes do |code|
+        = render "code_fields", f: code
+      .links
+        = link_to_add_association "Add Symbol", f, :codes
+
+  .form-actions
+    = f.button :submit, class: 'btn btn-success'

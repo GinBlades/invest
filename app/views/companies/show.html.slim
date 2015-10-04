@@ -1,0 +1,11 @@
+table.table.table-striped
+  tr
+    th Name:
+    td= @company.name
+  tr
+    th Description:
+    td= @company.description
+
+.btn-group
+  = link_to "Edit", edit_company_path(@company), class: "btn btn-default"
+  = link_to "Back", companies_path, class: "btn btn-default"

@@ -1,0 +1,26 @@
+h1 
+  | Codes
+  = link_to "New Code", new_code_path, class: "btn btn-primary"
+
+table.table.table-striped
+  thead
+    tr
+      th Company
+      th Symbol
+      th Description
+      th
+      th
+      
+  tbody
+    - @codes.each do |code|
+      tr
+        td= code.company
+        td= code.symbol
+        td= code.description
+        td= link_to "Show", code
+        td
+          = link_to "Edit", edit_code_path(code)
+          '
+          |/
+          '
+          = link_to "Destroy", code, method: :delete, data: { confirm: "Are you sure?" }
