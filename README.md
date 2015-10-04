@@ -11,6 +11,3 @@
 * Slim
 * Turbolinks
 * Pry
-
-Replace instances of `StmBlog` and `stm_blog`.
-
