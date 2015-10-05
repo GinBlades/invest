@@ -37,3 +37,4 @@ gem "slim-rails"
 gem "devise"
 gem "oauth"
 gem "cocoon"
+gem "whenever", require: false

@@ -8,15 +8,16 @@ table.table.table-striped
   tr
     th Description:
     td= @code.description
-  tr
-    th Most Recent Quote:
-    td
-      table.table-bordered
-        tbody
-          - @code.quotes.last.json.each do |k, v|
-            tr
-              th = Quote.tradeking_json_map[k]
-              td = v
+  - unless @code.quotes.empty?
+    tr
+      th Most Recent Quote:
+      td
+        table.table-bordered
+          tbody
+            - @code.quotes.last.json.each do |k, v|
+              tr
+                th = Quote.tradeking_json_map[k]
+                td = v
 
 .btn-group
   = link_to "Edit", edit_code_path(@code), class: "btn btn-default"

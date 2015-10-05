@@ -80,6 +80,7 @@ class Quote < ActiveRecord::Base
         "rootsymbol" => "Option root symbol",
         "secclass" => "Security class", # (0=stock, 1=option)
         "sesn" => "Trading session as (pre, regular, &amp, post)",
+        "sesn_vl" => "Trading session volume",
         "sho" => "Shares Outstanding",
         "strikeprice" => "Option strike price (not extended by multiplier)",
         "symbol" => "Symbol from data provider",
